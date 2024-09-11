@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const criarFornecedor = require('../Fornecedor/criarFornecedor')
+const criarFornecedor = require('./criarFornecedor')
     router.post('/', criarFornecedor);
 
-const listarFornecedor = require('../Fornecedor/listarFornecedor')
-    router.get('/', listarFornecedor);
+const listarFornecedores = require('./listarFornecedores')
+    router.get('/', listarFornecedores);
    
-const atualizarFornecedor = require('../Fornecedor/atualizarFornecedor')    
+const atualizarFornecedor = require('./atualizarFornecedor')    
     router.put('/:id', atualizarFornecedor);
 
-const deleteFornecedor = require('../Fornecedor/deleteFornecedor')
+const deleteFornecedor = require('./deleteFornecedor')
     router.delete('/:id', deleteFornecedor);
     
 module.exports = router    

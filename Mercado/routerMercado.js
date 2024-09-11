@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const criarFornecedor = require('../Fornecedor/criarFornecedor')
-    router.post('/', criarFornecedor);
+const criarMercado = require('./criarMercado')
+    router.post('/', criarMercado);
 
-const listarFornecedor = require('../Fornecedor/listarFornecedor')
-    router.get('/', listarFornecedor);
+const listarMercados = require('./listarMercados')
+    router.get('/', listarMercados);
    
-const atualizarFornecedor = require('../Fornecedor/atualizarFornecedor')    
-    router.put('/:id', atualizarFornecedor);
+const atualizarMercado = require('./atualizarMercado')    
+    router.put('/:id', atualizarMercado);
 
-const deleteFornecedor = require('../Fornecedor/deleteFornecedor')
-    router.delete('/:id', deleteFornecedor);
+const deleteMercado = require('./deleteMercado')
+    router.delete('/:id', deleteMercado);
     
 module.exports = router   

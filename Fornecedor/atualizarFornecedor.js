@@ -1,17 +1,17 @@
-const { fornecedor } = require('../data');
+const { fornecedores } = require('../data');
 
 const atualizarFornecedor = (req, res) => {
 const { id } = req.params;
 const novoNomeFornecedor = req.body.nomeFornecedor;
 
-const forne = fornecedor.find(f => f.id == id);
+const fornecedor = fornecedores.find(f => f.id == id);
 
-    if (!forne) {
-        return res.status(404).send({ mensagem: 'Funcionário não encontrado' });
+    if (!fornecedor) {
+        return res.status(404).send({ mensagem: 'Fornecedor não encontrado' });
     };
 
-    forne.nomeFornecedor = novoNomeFornecedor;
-    res.status(200).send({mensagem: 'Funcionário atualizado com sucesso!', forne: forne});
+    fornecedor.nomeFornecedor = novoNomeFornecedor;
+    res.status(200).send({mensagem: 'Fornecedor atualizado com sucesso!', fornecedor: fornecedor});
 };
 
 module.exports = atualizarFornecedor;

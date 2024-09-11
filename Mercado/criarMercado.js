@@ -1,17 +1,16 @@
-const { mercado } = require('./data');
+const { mercados } = require('../data');
 
 function criarMercado(req, res) {
     console.log(req.body);
 
-const novoMercado = {
-    id: mercado.length + 1,
-    nomeMercado: req.body.nomeMercado,
-    endereco: req.body.endereco,
-
+    const novoMercado = {
+        id: mercados.length + 1,
+        nomeMercado: req.body.nomeMercado,
+        endereco: req.body.endereco,
     };
     
-    mercado.push(novoMercado) 
-    res.status(201).send({mensagem: 'Mercado criado com sucesso!', mercados: novoMercado});
+    mercados.push(novoMercado) 
+    res.status(201).send({mensagem: 'Mercado criado com sucesso!', mercado: novoMercado});
 };
 
 module.exports = criarMercado;
